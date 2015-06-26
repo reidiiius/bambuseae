@@ -1,0 +1,245 @@
+
+body {
+  margin:0;
+  padding:0;
+  background-color:#0c0c0c;
+}
+h1 {
+  font-family:sans-serif;
+  color:#504e1a;
+  margin:18px 0 0 16px;
+}
+#ui {
+  text-align:center;
+  font-family:consolas,monospace;
+  font-size:20px;
+}
+.nav {
+  background-color:#000000;
+  border:2px solid #202020;
+  border-radius:15px;
+  padding:0 24px 0 24px;
+}
+ul {
+  list-style-type:none;
+  padding:0;
+}
+a:link {
+  text-decoration:none;
+  color:#707000;
+}
+a:visited {
+  text-decoration:none;
+  color:#707000;
+}
+a:hover {
+  text-decoration:underline;
+  color:#999900;
+}
+a:active {
+  text-decoration:underline;
+  color:#999900;
+}
+#topaz {
+  position:absolute;
+  left:60px;
+  top:118px;
+}
+#sapphire {
+  position:absolute;
+  left:24px;
+  top:230px;
+}
+#peridot {
+  position:absolute;
+  left:260px;
+  top:75px;
+}
+#amethyst {
+  position:absolute;
+  left:250px;
+  top:250px;
+}
+#onyx {
+  position:absolute;
+  left:500px;
+  top:52px;
+}
+#agate {
+  position:absolute;
+  left:775px;
+  top:100px;
+}
+#beryl {
+  position:absolute;
+  left:810px;
+  top:230px;
+}
+#xtradex {
+  position:absolute;
+  left:790px;
+  top:400px;
+}
+#srl {
+  position:absolute;
+  left:40px;
+  top:15px;
+  font-family:consolas,monospace;
+  font-size:20px;
+}
+#obv {
+  position:absolute;
+  left:100px;
+  top:76px;
+}
+#rev {
+  position:absolute;
+  left:100px;
+  top:332px;
+}
+.tt {
+  font-family:consolas,monospace;
+  font-size:20px;
+  color:#808000;
+  background-color:#000000;
+  border:2px solid #202020;
+  border-radius:15px;
+  padding:16px 24px 0 24px;
+}
+.key {
+  font-family:consolas,monospace;
+  font-size:22px;
+  color:#505050;
+}
+#logo {
+  position:absolute;
+  left:70px;
+  top:410px;
+  width:100px;
+  height:100px;
+  background-color:#000000;
+  border:2px solid #202020;
+  border-radius:12px;
+  padding-left:12px;
+  padding-top:12px;
+}
+#ftr {
+  position:absolute;
+  left:40px;
+  top:595px;
+}
+.attr {
+  font-family:arial,sans-serif;
+  font-size:16px;
+  color:#3f3f3f;
+}
+@media screen and ( max-width:980px ) {
+  h1 {
+    margin:0 auto 0 auto;
+    text-align:center;
+  }
+  #ui {
+    width:300px;
+    margin:0 auto 0 auto;
+  }
+  .nav {
+    margin:0;
+    padding:0;
+  }
+  li {
+    padding:4px;
+  }
+  #topaz {
+    position:relative;
+    left:0;
+    top:0;
+  }
+  #sapphire {
+    position:relative;
+    left:0;
+    top:0;
+  }
+  #peridot {
+    position:relative;
+    left:0;
+    top:0;
+  }
+  #amethyst {
+    position:relative;
+    left:0;
+    top:0;
+  }
+  #onyx {
+    position:relative;
+    left:0;
+    top:0;
+  }
+  #agate {
+    position:relative;
+    left:0;
+    top:0;
+  }
+  #beryl {
+    position:relative;
+    left:0;
+    top:0;
+  }
+  #xtradex {
+    position:relative;
+    left:0;
+    top:0;
+    display:none;
+  }
+  #srl {
+    position:relative;
+    left:0;
+    top:0;
+    width:200px;
+    margin:0 auto 0 auto;
+    padding:0;
+    text-align:center;
+  }
+  #obv {
+    position:relative;
+    left:0;
+    top:0;
+    width:450px;
+    margin:0 auto 0 auto;
+    padding:0;
+  }
+  #rev {
+    position:relative;
+    left:0;
+    top:0;
+    width:450px;
+    margin:0 auto 0 auto;
+    padding:0;
+  }
+  .tt {
+    margin:0;
+    padding:8px 0 0 24px;
+    font-size:12px;
+    color:#999900;
+  }
+  .key {
+    font-size:16px;
+    color:#696969;
+  }
+  #logo {
+    position:relative;
+    left:0;
+    top:0;
+    margin:16px auto 16px auto;
+  }
+  #ftr {
+    position:relative;
+    left:0;
+    top:0;
+  }
+  .attr {
+    margin:8px 0 12px 0;
+    padding:0;
+    text-align:center;
+  }
+}
+
