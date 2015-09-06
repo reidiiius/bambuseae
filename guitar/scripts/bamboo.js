@@ -98,6 +98,6 @@ function stringTuner(o) {
 function serialism() {
   var nt = new Date();
   var sr = document.getElementById("qe");
-  sr.innerHTML = nt.getTime();
+  sr.textContent = nt.getTime();
 }
 
