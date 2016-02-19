@@ -1,9 +1,11 @@
 
 repo: bambuseae
 
-version: 150906.0
+version: 160219.0
 
 desc: music education resources
+
+url: https://github.com/reidiiius/bambuseae
 
 license: MIT
 

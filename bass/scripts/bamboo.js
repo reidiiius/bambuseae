@@ -1,4 +1,4 @@
-/* Copyright 2013-2015 Reid Netterville III */
+/* Copyright 2013-2016 Reid Netterville III */
 
 var Specie = {
       j2: "汞汞 钚铁 一一 一一 铜镎 铅金 一一 金铅 一一 银铀 一一 铁钚 ",
