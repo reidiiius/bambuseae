@@ -1,7 +1,7 @@
 
 repo: bambuseae
 
-version: 160408.0
+version: 160525.0
 
 desc: music education resources
 
