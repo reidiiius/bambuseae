@@ -2,15 +2,19 @@
 
 "use strict";
 
-if (document.title == "") {
+if (document.title === "") {
   document.title = document.location.hash.replace("#", "");
 }
 
 var Poaceae = {};
 
 Poaceae.clade = function() {
-  var uralian = document.title;
-  return uralian.split("_");
+  if (document.title.length > 0 && typeof document.title === "string") {
+    var uralian = document.title;
+    return uralian.split("_");
+  } else {
+    return null;
+  }
 };
 
 Poaceae.specie = {
@@ -98,16 +102,18 @@ Poaceae.specie = {
  k1j56y7: "一一 金铀 镎锡 一一 钒汞 铁铁 汞钒 一一 锡镎 铀金 一一 一一 ",
  k2j56y7: "镎铜 一一 一一 铁钚 汞汞 钚铁 锡钒 一一 铜镎 铅金 一一 一一 "};
 
-if (Poaceae.clade() == "") {
+if (Poaceae.clade() === null) {
   Poaceae.prime = "n0";
   Poaceae.retro = "n0";
 } else {
-  if (Poaceae.specie.hasOwnProperty(Poaceae.clade()[0])) {
+  if (Poaceae.clade()[0] !== undefined && Poaceae.clade()[0] !== "" &&
+      Poaceae.specie.hasOwnProperty(Poaceae.clade()[0])) {
     Poaceae.prime = Poaceae.clade()[0];
   } else {
     Poaceae.prime = "n0";
   }
-  if (Poaceae.specie.hasOwnProperty(Poaceae.clade()[1])) {
+  if (Poaceae.clade()[1] !== undefined && Poaceae.clade()[1] !== "" &&
+      Poaceae.specie.hasOwnProperty(Poaceae.clade()[1])) {
     Poaceae.retro = Poaceae.clade()[1];
   } else {
     Poaceae.retro = "n0";
@@ -129,4 +135,6 @@ Poaceae.serialism = function() {
   var sr = document.getElementById("qe");
   sr.textContent = nt.getTime();
 }
+
+Object.freeze(Poaceae);
 
