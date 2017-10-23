@@ -1,11 +1,23 @@
+# Bambuseae
+简牍 Jiandu
 
-repo: bambuseae
+---
 
-version: 170212.0
+### Download
 
-desc: music education resources
+    git clone https://github.com/reidiiius/bambuseae.git
 
-url: https://github.com/reidiiius/bambuseae
+---
 
-license: MIT
+### Usage
+command line
+
+    cd bambuseae/
+
+    luakit -u index.html
+
+---
+
+### Distribution
+MIT License
 

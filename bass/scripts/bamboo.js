@@ -1,6 +1,19 @@
-/* Copyright 2013-2017 Reid Netterville III */
+/* Copyright 2017 Reid Netterville III */
 
-var Specie = {
+"use strict";
+
+if (document.title == "") {
+  document.title = document.location.hash.replace("#", "");
+}
+
+var Poaceae = {};
+
+Poaceae.clade = function() {
+  var uralian = document.title;
+  return uralian.split("_");
+};
+
+Poaceae.specie = {
       j2: "汞汞 钚铁 一一 一一 铜镎 铅金 一一 金铅 一一 银铀 一一 铁钚 ",
       j3: "汞锡 一一 锡汞 铀铁 一一 铅银 一一 金金 一一 银铅 一一 铁铀 ",
       j5: "铅铜 一一 金锡 一一 银汞 钒铁 铁钒 一一 一一 锡金 一一 铜铅 ",
@@ -42,7 +55,6 @@ var Specie = {
     n345: "一一 钚铁 一一 一一 铜镎 铅金 一一 金铅 镎铜 一一 钒锡 铁钚 ",
     n5y2: "汞锰 一一 一一 锰汞 铜铁 一一 一一 金镎 镎金 一一 钒铅 铁铜 ",
     n6x2: "铁铜 汞锰 一一 一一 锰汞 铜铁 铅钒 一一 金镎 镎金 一一 一一 ",
-   j17k2: "一一 一一 一一 锰铁 铜钒 铅银 一一 金金 一一 银铅 钒铜 铁锰 ",
    j17y2: "汞银 一一 一一 一一 铜铅 铅铜 一一 金锡 一一 银汞 钒铁 铁钒 ",
    j23k6: "汞汞 钚铁 一一 铀银 一一 铅金 一一 金铅 一一 一一 钒锡 铁钚 ",
    j25y6: "钒铜 铁锰 一一 一一 锡汞 锰铁 铜钒 铅银 一一 一一 一一 银铅 ",
@@ -53,6 +65,7 @@ var Specie = {
    j56y7: "铀铜 一一 铅锡 一一 金汞 镎铁 银钒 一一 铁镎 汞金 一一 一一 ",
    k12j5: "一一 银铀 一一 铁钚 汞汞 钚铁 锡钒 一一 一一 铅金 一一 金铅 ",
    k17j5: "钒铜 铁锰 汞锡 一一 锡汞 锰铁 铜钒 一一 一一 金金 一一 一一 ",
+   k2j17: "一一 一一 一一 锰铁 铜钒 铅银 一一 金金 一一 银铅 钒铜 铁锰 ",
    k25x1: "一一 一一 钒锡 铁钚 汞汞 钚铁 一一 一一 铜镎 铅金 一一 金铅 ",
    k26x5: "汞锡 一一 一一 锰铁 铜钒 铅银 一一 一一 一一 银铅 钒铜 铁锰 ",
    k2j56: "镎铜 一一 一一 铁钚 汞汞 钚铁 锡钒 一一 铜镎 一一 一一 金铅 ",
@@ -85,7 +98,23 @@ var Specie = {
  k1j56y7: "一一 金铀 镎锡 一一 钒汞 铁铁 汞钒 一一 锡镎 铀金 一一 一一 ",
  k2j56y7: "镎铜 一一 一一 铁钚 汞汞 钚铁 锡钒 一一 铜镎 铅金 一一 一一 "};
 
-function stringTuner(o) {
+if (Poaceae.clade() == "") {
+  Poaceae.prime = "n0";
+  Poaceae.retro = "n0";
+} else {
+  if (Poaceae.specie.hasOwnProperty(Poaceae.clade()[0])) {
+    Poaceae.prime = Poaceae.clade()[0];
+  } else {
+    Poaceae.prime = "n0";
+  }
+  if (Poaceae.specie.hasOwnProperty(Poaceae.clade()[1])) {
+    Poaceae.retro = Poaceae.clade()[1];
+  } else {
+    Poaceae.retro = "n0";
+  }
+}
+
+Poaceae.stringTuner = function(o) {
  document.writeln(o.slice(15,36).concat(o.slice( 0,17)));
  document.writeln(o.slice( 0,36).concat(o.slice( 0, 2)));
  document.writeln(o.slice(21,36).concat(o.slice( 0,23)));
@@ -95,7 +124,7 @@ function stringTuner(o) {
 // document.writeln(o.slice(33,36).concat(o.slice( 0,35)));
 }
 
-function serialism() {
+Poaceae.serialism = function() {
   var nt = new Date();
   var sr = document.getElementById("qe");
   sr.textContent = nt.getTime();
