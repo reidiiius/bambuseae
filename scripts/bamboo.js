@@ -6,9 +6,9 @@ if (document.title === "") {
   document.title = document.location.hash.replace("#", "");
 }
 
-var Huangshan = {};
+var HuangShan = {};
 
-Huangshan.clade = function() {
+HuangShan.clade = function() {
   if (document.title.length > 0 && typeof document.title === "string") {
     var uralian = document.title;
     return uralian.split("_");
@@ -17,7 +17,7 @@ Huangshan.clade = function() {
   }
 };
 
-Huangshan.JinshuLong = {
+HuangShan.JinshuLong = {
       j2: "汞汞 钚铁 一一 一一 铜镎 铅金 一一 金铅 一一 银铀 一一 铁钚 ",
       j3: "汞锡 一一 锡汞 铀铁 一一 铅银 一一 金金 一一 银铅 一一 铁铀 ",
       j5: "铅铜 一一 金锡 一一 银汞 钒铁 铁钒 一一 一一 锡金 一一 铜铅 ",
@@ -102,25 +102,25 @@ Huangshan.JinshuLong = {
  k1j56y7: "一一 金铀 镎锡 一一 钒汞 铁铁 汞钒 一一 锡镎 铀金 一一 一一 ",
  k2j56y7: "镎铜 一一 一一 铁钚 汞汞 钚铁 锡钒 一一 铜镎 铅金 一一 一一 "};
 
-if (Huangshan.clade() === null) {
-  Huangshan.prime = "n0";
-  Huangshan.retro = "n0";
+if (HuangShan.clade() === null) {
+  HuangShan.prime = "n0";
+  HuangShan.retro = "n0";
 } else {
-  if (Huangshan.clade()[0] !== undefined && Huangshan.clade()[0] !== "" &&
-      Huangshan.JinshuLong.hasOwnProperty(Huangshan.clade()[0])) {
-    Huangshan.prime = Huangshan.clade()[0];
+  if (HuangShan.clade()[0] !== undefined && HuangShan.clade()[0] !== "" &&
+      HuangShan.JinshuLong.hasOwnProperty(HuangShan.clade()[0])) {
+    HuangShan.prime = HuangShan.clade()[0];
   } else {
-    Huangshan.prime = "n0";
+    HuangShan.prime = "n0";
   }
-  if (Huangshan.clade()[1] !== undefined && Huangshan.clade()[1] !== "" &&
-      Huangshan.JinshuLong.hasOwnProperty(Huangshan.clade()[1])) {
-    Huangshan.retro = Huangshan.clade()[1];
+  if (HuangShan.clade()[1] !== undefined && HuangShan.clade()[1] !== "" &&
+      HuangShan.JinshuLong.hasOwnProperty(HuangShan.clade()[1])) {
+    HuangShan.retro = HuangShan.clade()[1];
   } else {
-    Huangshan.retro = "n0";
+    HuangShan.retro = "n0";
   }
 }
 
-Huangshan.digraph = {
+HuangShan.digraph = {
   fj: function(qp) {return this.en(qp)},
   cj: function(qp) {return this.bn(qp)},
   gj: function(qp) {return this.fk(qp)},
@@ -144,41 +144,59 @@ Huangshan.digraph = {
   bk: function(qp) {return this.cn(qp)}
 };
 
-Huangshan.beadgcf = function(qp) {
-  document.writeln(Huangshan.digraph.fn(qp).concat(qp.slice(15,18)));
-  document.writeln(Huangshan.digraph.cn(qp).concat(qp.slice( 0, 3)));
-  document.writeln(Huangshan.digraph.gn(qp).concat(qp.slice(21,24)));
-  document.writeln(Huangshan.digraph.dn(qp).concat(qp.slice( 6, 9)));
-  document.writeln(Huangshan.digraph.an(qp).concat(qp.slice(27,30)));
-  document.writeln(Huangshan.digraph.en(qp).concat(qp.slice(12,15)));
-//  document.writeln(Huangshan.digraph.bn(qp).concat(qp.slice(33,36)));
+HuangShan.beadgcf = function(qp) {
+  var jiandu = [
+    HuangShan.digraph.fn(qp).concat(qp.slice(15,18)),
+    HuangShan.digraph.cn(qp).concat(qp.slice( 0, 3)),
+    HuangShan.digraph.gn(qp).concat(qp.slice(21,24)),
+    HuangShan.digraph.dn(qp).concat(qp.slice( 6, 9)),
+    HuangShan.digraph.an(qp).concat(qp.slice(27,30)),
+    HuangShan.digraph.en(qp).concat(qp.slice(12,15)),
+    HuangShan.digraph.bn(qp).concat(qp.slice(33,36))
+  ];
+  var abacus = 0;
+  while (abacus < jiandu.length) {
+    document.writeln(jiandu[abacus]);
+    abacus += 1;
+  }
 }
 
-Huangshan.fcgdaeb = function(qp) {
-//  document.writeln(Huangshan.digraph.bn(qp).concat(qp.slice(33,36)));
-  document.writeln(Huangshan.digraph.en(qp).concat(qp.slice(12,15)));
-  document.writeln(Huangshan.digraph.an(qp).concat(qp.slice(27,30)));
-  document.writeln(Huangshan.digraph.dn(qp).concat(qp.slice( 6, 9)));
-  document.writeln(Huangshan.digraph.gn(qp).concat(qp.slice(21,24)));
-  document.writeln(Huangshan.digraph.cn(qp).concat(qp.slice( 0, 3)));
-//  document.writeln(Huangshan.digraph.fn(qp).concat(qp.slice(15,18)));
+HuangShan.cgdae = function(qp) {
+  var jiandu = [
+    HuangShan.digraph.en(qp).concat(qp.slice(12,15)),
+    HuangShan.digraph.an(qp).concat(qp.slice(27,30)),
+    HuangShan.digraph.dn(qp).concat(qp.slice( 6, 9)),
+    HuangShan.digraph.gn(qp).concat(qp.slice(21,24)),
+    HuangShan.digraph.cn(qp).concat(qp.slice( 0, 3))
+  ];
+  var abacus = 0;
+  while (abacus < jiandu.length) {
+    document.writeln(jiandu[abacus]);
+    abacus += 1;
+  }
 }
 
-Huangshan.ceadgbe = function(qp) {
-  document.writeln(Huangshan.digraph.en(qp).concat(qp.slice(12,15)));
-  document.writeln(Huangshan.digraph.bn(qp).concat(qp.slice(33,36)));
-  document.writeln(Huangshan.digraph.gn(qp).concat(qp.slice(21,24)));
-  document.writeln(Huangshan.digraph.dn(qp).concat(qp.slice( 6, 9)));
-  document.writeln(Huangshan.digraph.an(qp).concat(qp.slice(27,30)));
-  document.writeln(Huangshan.digraph.en(qp).concat(qp.slice(12,15)));
-//  document.writeln(Huangshan.digraph.cn(qp).concat(qp.slice( 0, 3)));
+HuangShan.eadgbe = function(qp) {
+  var jiandu = [
+    HuangShan.digraph.en(qp).concat(qp.slice(12,15)),
+    HuangShan.digraph.bn(qp).concat(qp.slice(33,36)),
+    HuangShan.digraph.gn(qp).concat(qp.slice(21,24)),
+    HuangShan.digraph.dn(qp).concat(qp.slice( 6, 9)),
+    HuangShan.digraph.an(qp).concat(qp.slice(27,30)),
+    HuangShan.digraph.en(qp).concat(qp.slice(12,15))
+  ];
+  var abacus = 0;
+  while (abacus < jiandu.length) {
+    document.writeln(jiandu[abacus]);
+    abacus += 1;
+  }
 }
 
-Huangshan.serialism = function() {
+HuangShan.serialism = function() {
   var nt = new Date();
   var sr = document.getElementById("qe");
   sr.textContent = nt.getTime();
 }
 
-Object.freeze(Huangshan);
+Object.freeze(HuangShan);
 
