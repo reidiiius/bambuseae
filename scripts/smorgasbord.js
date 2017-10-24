@@ -2,7 +2,7 @@
 "use strict";
 
 (function() {
-  var menui = ['<div id="ui">',
+  var assemblage = ['<div id="ui">',
 '<div class="nav" id="topaz">',
 '<ul>',
   '<li tabindex="1"><a href="catalogue.html#n0_n0">n0_n0<\/a><\/li>',
@@ -80,28 +80,27 @@
 '<\/div>',
 '<\/div>'];
 
-  for (var i = 0; i < menui.length; i++) {
-    document.writeln(menui[i]);
+  for (var sequent = 0; sequent < assemblage.length; sequent++) {
+    document.writeln(assemblage[sequent]);
   }
 })();
 
 (function() {
   if (document.location && document.URL) {
     var auricular = {};
-    auricular.sensor = function(perceive) {
-      return document.hasFocus() && perceive.altKey ||
-             document.hasFocus() && perceive.shiftKey;
+    auricular.detector = function(awareness) {
+      return document.hasFocus() && awareness.getModifierState("Alt");
     };
     auricular.ui = document.getElementById("ui");
     auricular.ui.addEventListener("keydown", function(instance) {
-      if (auricular.sensor(instance)) {
-        var page = document.URL;
-          if (page === null) {
+      if (auricular.detector(instance)) {
+        var resource = document.URL;
+          if (resource === null) {
             return null;
           } else {
-            page = page.replace("index", "catalogue");
+            resource = resource.replace("index", "catalogue");
           }
-        document.location.href = page + "#" +
+        document.location.href = resource + "#" +
         document.activeElement.textContent;
       }
     }, false);
