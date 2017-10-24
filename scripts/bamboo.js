@@ -6,9 +6,9 @@ if (document.title === "") {
   document.title = document.location.hash.replace("#", "");
 }
 
-var Poaceae = {};
+var Huangshan = {};
 
-Poaceae.clade = function() {
+Huangshan.clade = function() {
   if (document.title.length > 0 && typeof document.title === "string") {
     var uralian = document.title;
     return uralian.split("_");
@@ -17,7 +17,7 @@ Poaceae.clade = function() {
   }
 };
 
-Poaceae.specie = {
+Huangshan.JinshuLong = {
       j2: "汞汞 钚铁 一一 一一 铜镎 铅金 一一 金铅 一一 银铀 一一 铁钚 ",
       j3: "汞锡 一一 锡汞 铀铁 一一 铅银 一一 金金 一一 银铅 一一 铁铀 ",
       j5: "铅铜 一一 金锡 一一 银汞 钒铁 铁钒 一一 一一 锡金 一一 铜铅 ",
@@ -102,39 +102,83 @@ Poaceae.specie = {
  k1j56y7: "一一 金铀 镎锡 一一 钒汞 铁铁 汞钒 一一 锡镎 铀金 一一 一一 ",
  k2j56y7: "镎铜 一一 一一 铁钚 汞汞 钚铁 锡钒 一一 铜镎 铅金 一一 一一 "};
 
-if (Poaceae.clade() === null) {
-  Poaceae.prime = "n0";
-  Poaceae.retro = "n0";
+if (Huangshan.clade() === null) {
+  Huangshan.prime = "n0";
+  Huangshan.retro = "n0";
 } else {
-  if (Poaceae.clade()[0] !== undefined && Poaceae.clade()[0] !== "" &&
-      Poaceae.specie.hasOwnProperty(Poaceae.clade()[0])) {
-    Poaceae.prime = Poaceae.clade()[0];
+  if (Huangshan.clade()[0] !== undefined && Huangshan.clade()[0] !== "" &&
+      Huangshan.JinshuLong.hasOwnProperty(Huangshan.clade()[0])) {
+    Huangshan.prime = Huangshan.clade()[0];
   } else {
-    Poaceae.prime = "n0";
+    Huangshan.prime = "n0";
   }
-  if (Poaceae.clade()[1] !== undefined && Poaceae.clade()[1] !== "" &&
-      Poaceae.specie.hasOwnProperty(Poaceae.clade()[1])) {
-    Poaceae.retro = Poaceae.clade()[1];
+  if (Huangshan.clade()[1] !== undefined && Huangshan.clade()[1] !== "" &&
+      Huangshan.JinshuLong.hasOwnProperty(Huangshan.clade()[1])) {
+    Huangshan.retro = Huangshan.clade()[1];
   } else {
-    Poaceae.retro = "n0";
+    Huangshan.retro = "n0";
   }
 }
 
-Poaceae.stringTuner = function(o) {
-// document.writeln(o.slice(33,36).concat(o.slice( 0,35)));
- document.writeln(o.slice(12,36).concat(o.slice( 0,14)));
- document.writeln(o.slice(27,36).concat(o.slice( 0,29)));
- document.writeln(o.slice( 6,36).concat(o.slice( 0, 8)));
- document.writeln(o.slice(21,36).concat(o.slice( 0,23)));
- document.writeln(o.slice( 0,36).concat(o.slice( 0, 2)));
-// document.writeln(o.slice(15,36).concat(o.slice( 0,17)));
+Huangshan.digraph = {
+  fj: function(qp) {return this.en(qp)},
+  cj: function(qp) {return this.bn(qp)},
+  gj: function(qp) {return this.fk(qp)},
+  dj: function(qp) {return this.ck(qp)},
+  aj: function(qp) {return(qp.slice(24,36).concat(qp.slice(0,24)))},
+  ej: function(qp) {return(qp.slice( 9,36).concat(qp.slice(0, 9)))},
+  bj: function(qp) {return(qp.slice(30,36).concat(qp.slice(0,30)))},
+  fn: function(qp) {return(qp.slice(15,36).concat(qp.slice(0,15)))},
+  cn: function(qp) {return(qp.slice( 0,36).concat(qp.slice(0, 0)))},
+  gn: function(qp) {return(qp.slice(21,36).concat(qp.slice(0,21)))},
+  dn: function(qp) {return(qp.slice( 6,36).concat(qp.slice(0, 6)))},
+  an: function(qp) {return(qp.slice(27,36).concat(qp.slice(0,27)))},
+  en: function(qp) {return(qp.slice(12,36).concat(qp.slice(0,12)))},
+  bn: function(qp) {return(qp.slice(33,36).concat(qp.slice(0,33)))},
+  fk: function(qp) {return(qp.slice(18,36).concat(qp.slice(0,18)))},
+  ck: function(qp) {return(qp.slice( 3,36).concat(qp.slice(0, 3)))},
+  gk: function(qp) {return(qp.slice(24,36).concat(qp.slice(0,24)))},
+  dk: function(qp) {return this.ej(qp)},
+  ak: function(qp) {return this.bj(qp)},
+  ek: function(qp) {return this.fn(qp)},
+  bk: function(qp) {return this.cn(qp)}
+};
+
+Huangshan.beadgcf = function(qp) {
+  document.writeln(Huangshan.digraph.fn(qp).concat(qp.slice(15,18)));
+  document.writeln(Huangshan.digraph.cn(qp).concat(qp.slice( 0, 3)));
+  document.writeln(Huangshan.digraph.gn(qp).concat(qp.slice(21,24)));
+  document.writeln(Huangshan.digraph.dn(qp).concat(qp.slice( 6, 9)));
+  document.writeln(Huangshan.digraph.an(qp).concat(qp.slice(27,30)));
+  document.writeln(Huangshan.digraph.en(qp).concat(qp.slice(12,15)));
+//  document.writeln(Huangshan.digraph.bn(qp).concat(qp.slice(33,36)));
 }
 
-Poaceae.serialism = function() {
+Huangshan.fcgdaeb = function(qp) {
+//  document.writeln(Huangshan.digraph.bn(qp).concat(qp.slice(33,36)));
+  document.writeln(Huangshan.digraph.en(qp).concat(qp.slice(12,15)));
+  document.writeln(Huangshan.digraph.an(qp).concat(qp.slice(27,30)));
+  document.writeln(Huangshan.digraph.dn(qp).concat(qp.slice( 6, 9)));
+  document.writeln(Huangshan.digraph.gn(qp).concat(qp.slice(21,24)));
+  document.writeln(Huangshan.digraph.cn(qp).concat(qp.slice( 0, 3)));
+//  document.writeln(Huangshan.digraph.fn(qp).concat(qp.slice(15,18)));
+}
+
+Huangshan.ceadgbe = function(qp) {
+  document.writeln(Huangshan.digraph.en(qp).concat(qp.slice(12,15)));
+  document.writeln(Huangshan.digraph.bn(qp).concat(qp.slice(33,36)));
+  document.writeln(Huangshan.digraph.gn(qp).concat(qp.slice(21,24)));
+  document.writeln(Huangshan.digraph.dn(qp).concat(qp.slice( 6, 9)));
+  document.writeln(Huangshan.digraph.an(qp).concat(qp.slice(27,30)));
+  document.writeln(Huangshan.digraph.en(qp).concat(qp.slice(12,15)));
+//  document.writeln(Huangshan.digraph.cn(qp).concat(qp.slice( 0, 3)));
+}
+
+Huangshan.serialism = function() {
   var nt = new Date();
   var sr = document.getElementById("qe");
   sr.textContent = nt.getTime();
 }
 
-Object.freeze(Poaceae);
+Object.freeze(Huangshan);
 
