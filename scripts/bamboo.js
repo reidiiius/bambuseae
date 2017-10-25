@@ -155,7 +155,7 @@ HuangShan.beadgcf = function(qp) {
     document.writeln(jiandu[abacus]);
     abacus += 1;
   }
-}
+};
 
 HuangShan.cgdae = function(qp) {
   var jiandu = [
@@ -170,7 +170,7 @@ HuangShan.cgdae = function(qp) {
     document.writeln(jiandu[abacus]);
     abacus += 1;
   }
-}
+};
 
 HuangShan.eadgbe = function(qp) {
   var jiandu = [
@@ -186,14 +186,22 @@ HuangShan.eadgbe = function(qp) {
     document.writeln(jiandu[abacus]);
     abacus += 1;
   }
-}
+};
 
 
-HuangShan.serialism = function() {
+HuangShan.serialism = function(entity) {
   var nt = new Date();
-  var sr = document.getElementById("qe");
+  var sr = document.getElementById(entity);
   sr.textContent = nt.getTime();
-}
+};
+
+HuangShan.auricular = function(entity) {
+  var srl = document.getElementById(entity);
+  srl.addEventListener("click", function() {
+    window.history.back();
+  }, false);
+};
+
 
 Object.freeze(HuangShan);
 

@@ -3,249 +3,110 @@ body {
   margin: 0;
   padding: 0;
   background-color: #0c0c0c;
-}
-h1 {
-  font-family: sans-serif;
-  color: #006900;
-  margin: 18px 0 0 16px;
-}
-#ui {
   text-align: center;
   font-family: monospace;
-  font-size: 20px;
+  font-size: 16px;
+  color: #727200;
 }
-#ui li:focus {
-  color: #2f4f4f;
-}
-.nav {
-  background-color: #000000;
-  border: 2px solid #202020;
-  border-radius: 15px;
-  padding: 0 24px 0 24px;
+h1 {
+  color: #006400;
 }
 ul {
   list-style-type: none;
-  padding: 0;
-}
-a:link {
-  text-decoration: none;
-  color: #707000;
-}
-a:visited {
-  text-decoration: none;
-  color: #707000;
-}
-a:hover {
-  text-decoration: underline;
-  color: #999900;
-}
-a:active {
-  text-decoration: underline;
-  color: #999900;
-}
-#topaz {
-  position: absolute;
-  left: 60px;
-  top: 118px;
-}
-#sapphire {
-  position: absolute;
-  left: 24px;
-  top: 230px;
-}
-#peridot {
-  position: absolute;
-  left: 260px;
-  top: 75px;
-}
-#amethyst {
-  position: absolute;
-  left: 250px;
-  top: 250px;
-}
-#onyx {
-  position: absolute;
-  left: 500px;
-  top: 52px;
-}
-#agate {
-  position: absolute;
-  left: 775px;
-  top: 100px;
-}
-#beryl {
-  position: absolute;
-  left: 810px;
-  top: 230px;
-}
-#xtradex {
-  position: absolute;
-  left: 790px;
-  top: 400px;
-}
-#srl {
-  position: absolute;
-  left: 40px;
-  top: 15px;
-  font-family: monospace;
-  font-size: 20px;
-}
-#obv {
-  position: absolute;
-  left: 100px;
-  top: 76px;
-}
-#rev {
-  position: absolute;
-  left: 100px;
-  top: 332px;
-}
-.tt {
-  font-family: monospace;
-  font-size: 20px;
-  color: #808000;
+  border: 2px solid #242424;
+  border-radius: 1em;
   background-color: #000000;
-  border: 2px solid #202020;
-  border-radius: 15px;
-  padding: 16px 24px 0 24px;
 }
-.key {
-  font-family: monospace;
-  font-size: 22px;
-  color: #505050;
+ul li:focus {
+  color: #2f4f4f;
 }
-#logo {
-  position: absolute;
-  left: 70px;
-  top: 410px;
-  width: 100px;
-  height: 100px;
+ul a:link {
+  text-decoration: none;
+  color: #727200;
+}
+ul a:hover {
+  text-decoration: underline;
+  color: #969600;
+}
+nav#ui {
+  width: 80%;
+  margin: 0 auto;
+}
+ul.nav {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.3em;
+  padding: 1em;
+  font-size: 1.1em;
+}
+ul.gate {
+  width: 10em;
+  margin: 0.5em auto;
+  line-height: 2.3em;
+  padding: 0.8em 0;
+  font-weight:bold;
+  font-size: 1.3em;
+}
+header#auricle {
+  width: 10em;
+  margin: 1% auto;
+  border: 2px solid #242424;
+  border-radius: 0.8em;
   background-color: #000000;
-  border: 2px solid #202020;
-  border-radius: 12px;
-  padding-left: 12px;
-  padding-top: 12px;
+  padding: 0.5em;
 }
-#ftr {
-  position: absolute;
-  left: 40px;
-  top: 595px;
+header#auricle nav {
+  font-size: 1.2em;
+  color: 727200;
 }
-.attr {
+header#auricle nav:hover {
+  color: #969600;
+  cursor: pointer;
+}
+section.jiandu {
+  width: 43em;
+  margin: 0 auto;
+}
+section.jiandu pre {
+  background-color: #000000;
+  border: 2px solid #242424;
+  border-radius: 1em;
+  padding: 0.8em 0.85em 0 1.25em;
+  text-align: left;
+  font-size: 1.2em;
+}
+span.key {
+  font-size: 1.1em;
+  color: #4f4f4f;
+}
+aside#logo {
+  width: 6.5em;
+  height: 6.5em;
+  margin: 0 auto;
+  background-color: #000000;
+  border: 2px solid #242424;
+  border-radius: 0.7em;
+  padding-left: 0.2em;
+  padding-top: 0.66em;
+}
+footer#ftr {
+  padding: 0 0.8em;
+  background-color: inherit;
+}
+p.attr {
   font-family: sans-serif;
-  font-size: 16px;
+  font-size: 0.88em;
   color: #3f3f3f;
 }
-@media screen and ( max-width: 980px ) {
-  h1 {
-    margin: 0.25em auto 0.25em auto;
-    text-align: center;
+@media screen and (max-width: 700px) {
+  section.jiandu {
+    width: 33em;
   }
-  #ui {
-    width: 300px;
-    margin: 0 auto 0 auto;
-  }
-  .nav {
-    margin: 0;
-    padding: 0;
-  }
-  li {
-    padding: 4px;
-  }
-  #topaz {
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-  #sapphire {
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-  #peridot {
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-  #amethyst {
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-  #onyx {
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-  #agate {
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-  #beryl {
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-  #xtradex {
-    position: relative;
-    left: 0;
-    top: 0;
-    display: none;
-  }
-  #srl {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 200px;
-    margin: 0 auto 0 auto;
-    padding: 0;
-    text-align: center;
-    font-size: 14px;
-    font-weight: bold;
-  }
-  #obv {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 450px;
-    margin: 0 auto 0 auto;
-    padding: 0;
-  }
-  #rev {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 450px;
-    margin: 0 auto 0 auto;
-    padding: 0;
-  }
-  .tt {
-    margin: 0;
-    padding: 8px 0 0 24px;
-    font-size: 12px;
-    color: #999900;
-  }
-  .key {
-    font-size: 16px;
-    color: #696969;
-  }
-  #logo {
-    position: relative;
-    left: 0;
-    top: 0;
-    margin: 16px auto 16px auto;
-  }
-  #ftr {
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-  .attr {
-    margin: 8px 0 12px 0;
-    padding: 0;
-    text-align: center;
-    font-size: 14px;
+  section.jiandu pre {
+    border: 2px solid #242424;
+    border-radius: 1em;
+    padding: 0.8em 0 0 0.8em;
+    font-size: 0.95em;
   }
 }
 
