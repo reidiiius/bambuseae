@@ -93,15 +93,15 @@
     };
     auricular.ui = document.getElementById("ui");
     auricular.ui.addEventListener("keydown", function(instance) {
+      var resource = document.URL;
       if (auricular.detector(instance)) {
-        var resource = document.URL;
-          if (resource === null) {
-            return null;
-          } else {
-            resource = resource.replace("index", "catalogue");
-          }
-        document.location.href = resource + "#" +
-        document.activeElement.textContent;
+        var focalPoint = document.activeElement.textContent;
+        if (/^(\w\d+)+_{1}(\w\d+)+$/.test(focalPoint)) {
+          resource = resource.replace("index", "catalogue");
+        } else {
+          return null;
+        }
+        document.location.href = resource + "#" + focalPoint;
       }
     }, false);
   }
