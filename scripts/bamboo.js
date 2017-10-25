@@ -2,20 +2,7 @@
 
 "use strict";
 
-if (document.title === "") {
-  document.title = document.location.hash.replace("#", "");
-}
-
 var HuangShan = {};
-
-HuangShan.clade = function() {
-  if (document.title.length > 0 && typeof document.title === "string") {
-    var uralian = document.title;
-    return uralian.split("_");
-  } else {
-    return null;
-  }
-};
 
 HuangShan.JinshuLong = {
       j2: "汞汞 钚铁 一一 一一 铜镎 铅金 一一 金铅 一一 银铀 一一 铁钚 ",
@@ -102,23 +89,31 @@ HuangShan.JinshuLong = {
  k1j56y7: "一一 金铀 镎锡 一一 钒汞 铁铁 汞钒 一一 锡镎 铀金 一一 一一 ",
  k2j56y7: "镎铜 一一 一一 铁钚 汞汞 钚铁 锡钒 一一 铜镎 铅金 一一 一一 "};
 
-if (HuangShan.clade() === null) {
-  HuangShan.prime = "n0";
-  HuangShan.retro = "n0";
-} else {
-  if (HuangShan.clade()[0] !== undefined && HuangShan.clade()[0] !== "" &&
-      HuangShan.JinshuLong.hasOwnProperty(HuangShan.clade()[0])) {
-    HuangShan.prime = HuangShan.clade()[0];
+
+if (document.title === "") {
+  if (document.location.hash) {
+    document.title = document.location.hash.replace("#", "");
   } else {
-    HuangShan.prime = "n0";
-  }
-  if (HuangShan.clade()[1] !== undefined && HuangShan.clade()[1] !== "" &&
-      HuangShan.JinshuLong.hasOwnProperty(HuangShan.clade()[1])) {
-    HuangShan.retro = HuangShan.clade()[1];
-  } else {
-    HuangShan.retro = "n0";
+    document.title = "n0_n0";
   }
 }
+
+HuangShan.clade = document.title.split("_");
+
+if (HuangShan.clade[0] !== undefined && HuangShan.clade[0] !== "" &&
+    HuangShan.JinshuLong.hasOwnProperty(HuangShan.clade[0])) {
+  HuangShan.prime = HuangShan.clade[0];
+} else {
+  HuangShan.prime = "n0";
+}
+
+if (HuangShan.clade[1] !== undefined && HuangShan.clade[1] !== "" &&
+    HuangShan.JinshuLong.hasOwnProperty(HuangShan.clade[1])) {
+  HuangShan.retro = HuangShan.clade[1];
+} else {
+  HuangShan.retro = "n0";
+}
+
 
 HuangShan.digraph = {
   fj: function(qp) {return this.en(qp)},
@@ -143,6 +138,7 @@ HuangShan.digraph = {
   ek: function(qp) {return this.fn(qp)},
   bk: function(qp) {return this.cn(qp)}
 };
+
 
 HuangShan.beadgcf = function(qp) {
   var jiandu = [
@@ -191,6 +187,7 @@ HuangShan.eadgbe = function(qp) {
     abacus += 1;
   }
 }
+
 
 HuangShan.serialism = function() {
   var nt = new Date();
