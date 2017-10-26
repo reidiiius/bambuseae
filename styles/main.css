@@ -110,9 +110,12 @@ footer#ftr {
 p.attr {
   font-family: sans-serif;
   font-size: 0.88em;
-  color: #4f4f4f;
+  color: #404040;
 }
 @media screen and (max-width: 700px) {
+  header#auricle nav {
+    font-size: 1em;
+  }
   section.jiandu {
     width: 33em;
   }
