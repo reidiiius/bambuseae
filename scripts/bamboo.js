@@ -1,4 +1,4 @@
-/* Copyright 2017 Reid Netterville III */
+/* Copyright (C) 2018 Reid Netterville III */
 
 "use strict";
 
@@ -139,53 +139,48 @@ HuangShan.digraph = {
   bk: function(qp) {return this.cn(qp)}
 };
 
+HuangShan.headstock = function(list) {
+  var abacus = 0;
+  while (abacus < list.length) {
+    document.writeln(list[abacus]);
+    abacus += 1;
+  }
+};
 
 HuangShan.beadgcf = function(qp) {
   var jiandu = [
-    HuangShan.digraph.fn(qp).concat(qp.slice(15,18)),
-    HuangShan.digraph.cn(qp).concat(qp.slice( 0, 3)),
-    HuangShan.digraph.gn(qp).concat(qp.slice(21,24)),
-    HuangShan.digraph.dn(qp).concat(qp.slice( 6, 9)),
-    HuangShan.digraph.an(qp).concat(qp.slice(27,30)),
-    HuangShan.digraph.en(qp).concat(qp.slice(12,15)),
-    HuangShan.digraph.bn(qp).concat(qp.slice(33,36))
+    this.digraph.fn(qp).concat(qp.slice(15,18)),
+    this.digraph.cn(qp).concat(qp.slice( 0, 3)),
+    this.digraph.gn(qp).concat(qp.slice(21,24)),
+    this.digraph.dn(qp).concat(qp.slice( 6, 9)),
+    this.digraph.an(qp).concat(qp.slice(27,30)),
+    this.digraph.en(qp).concat(qp.slice(12,15)),
+    this.digraph.bn(qp).concat(qp.slice(33,36))
   ];
-  var abacus = 0;
-  while (abacus < jiandu.length) {
-    document.writeln(jiandu[abacus]);
-    abacus += 1;
-  }
+  this.headstock(jiandu);
 };
 
 HuangShan.cgdae = function(qp) {
   var jiandu = [
-    HuangShan.digraph.en(qp).concat(qp.slice(12,15)),
-    HuangShan.digraph.an(qp).concat(qp.slice(27,30)),
-    HuangShan.digraph.dn(qp).concat(qp.slice( 6, 9)),
-    HuangShan.digraph.gn(qp).concat(qp.slice(21,24)),
-    HuangShan.digraph.cn(qp).concat(qp.slice( 0, 3))
+    this.digraph.en(qp).concat(qp.slice(12,15)),
+    this.digraph.an(qp).concat(qp.slice(27,30)),
+    this.digraph.dn(qp).concat(qp.slice( 6, 9)),
+    this.digraph.gn(qp).concat(qp.slice(21,24)),
+    this.digraph.cn(qp).concat(qp.slice( 0, 3))
   ];
-  var abacus = 0;
-  while (abacus < jiandu.length) {
-    document.writeln(jiandu[abacus]);
-    abacus += 1;
-  }
+  this.headstock(jiandu);
 };
 
 HuangShan.eadgbe = function(qp) {
   var jiandu = [
-    HuangShan.digraph.en(qp).concat(qp.slice(12,15)),
-    HuangShan.digraph.bn(qp).concat(qp.slice(33,36)),
-    HuangShan.digraph.gn(qp).concat(qp.slice(21,24)),
-    HuangShan.digraph.dn(qp).concat(qp.slice( 6, 9)),
-    HuangShan.digraph.an(qp).concat(qp.slice(27,30)),
-    HuangShan.digraph.en(qp).concat(qp.slice(12,15))
+    this.digraph.en(qp).concat(qp.slice(12,15)),
+    this.digraph.bn(qp).concat(qp.slice(33,36)),
+    this.digraph.gn(qp).concat(qp.slice(21,24)),
+    this.digraph.dn(qp).concat(qp.slice( 6, 9)),
+    this.digraph.an(qp).concat(qp.slice(27,30)),
+    this.digraph.en(qp).concat(qp.slice(12,15))
   ];
-  var abacus = 0;
-  while (abacus < jiandu.length) {
-    document.writeln(jiandu[abacus]);
-    abacus += 1;
-  }
+  this.headstock(jiandu);
 };
 
 
@@ -202,6 +197,4 @@ HuangShan.auricular = function(entity) {
   }, false);
 };
 
-
-Object.freeze(HuangShan);
 
