@@ -186,20 +186,18 @@ if (document.title === "") {
 
 HuangShan.clade = document.title.split("_");
 
-if (HuangShan.clade[0] !== undefined && HuangShan.clade[0] !== "" &&
-    HuangShan.AzureDragon.hasOwnProperty(HuangShan.clade[0])) {
-  HuangShan.prime = HuangShan.clade[0];
-} else {
-  HuangShan.prime = "n0";
-}
+HuangShan.totem = "WhiteTiger";
 
-if (HuangShan.clade[1] !== undefined && HuangShan.clade[1] !== "" &&
-    HuangShan.AzureDragon.hasOwnProperty(HuangShan.clade[1])) {
-  HuangShan.retro = HuangShan.clade[1];
-} else {
-  HuangShan.retro = "n0";
-}
+HuangShan.phase = ["prime", "retro"];
 
+for (var i = 0; i < 2; i++) {
+  if (HuangShan.clade[i] !== undefined && HuangShan.clade[i] !== "" &&
+      HuangShan[HuangShan.totem].hasOwnProperty(HuangShan.clade[i])) {
+    HuangShan[HuangShan.phase[i]] = HuangShan.clade[i];
+  } else {
+    HuangShan[HuangShan.phase[i]] = "n0";
+  }
+}
 
 HuangShan.digraph = {
   fj: function(qp) {return this.en(qp)},

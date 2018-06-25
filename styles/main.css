@@ -23,11 +23,7 @@ ul {
 ul li:focus {
   color: #2f4f4f;
 }
-ul a:link {
-  text-decoration: none;
-  color: #727200;
-}
-ul a:visited {
+ul a {
   text-decoration: none;
   color: #727200;
 }
@@ -74,7 +70,8 @@ header#auricle nav:hover {
   cursor: pointer;
 }
 section.jiandu {
-  width: 43em;
+  width: 29.6em;
+ /* width: 43em; */
   margin: 1% auto;
 }
 section.jiandu pre {
@@ -117,7 +114,8 @@ p.attr {
     font-size: 1em;
   }
   section.jiandu {
-    width: 33em;
+    width: 23.3em;
+   /* width: 33em; */
   }
   section.jiandu pre {
     border: 2px solid #242424;
