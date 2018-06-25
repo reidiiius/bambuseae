@@ -231,7 +231,8 @@ HuangShan.headstock = function(list) {
   }
 };
 
-HuangShan.beadgcf = function(qp) {
+HuangShan.beadgcf = function(pole) {
+  var qp = this[this.totem][this[pole]];
   var jiandu = [
     this.digraph.fn(qp).concat(qp.slice(15,18)),
     this.digraph.cn(qp).concat(qp.slice( 0, 3)),
@@ -244,7 +245,8 @@ HuangShan.beadgcf = function(qp) {
   this.headstock(jiandu);
 };
 
-HuangShan.cgdae = function(qp) {
+HuangShan.cgdae = function(pole) {
+  var qp = this[this.totem][this[pole]];
   var jiandu = [
     this.digraph.en(qp).concat(qp.slice(12,15)),
     this.digraph.an(qp).concat(qp.slice(27,30)),
@@ -255,7 +257,8 @@ HuangShan.cgdae = function(qp) {
   this.headstock(jiandu);
 };
 
-HuangShan.eadgbe = function(qp) {
+HuangShan.eadgbe = function(pole) {
+  var qp = this[this.totem][this[pole]];
   var jiandu = [
     this.digraph.en(qp).concat(qp.slice(12,15)),
     this.digraph.bn(qp).concat(qp.slice(33,36)),
