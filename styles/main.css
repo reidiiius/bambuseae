@@ -14,6 +14,11 @@ h1 {
   letter-spacing: 0.1em;
   color: #006400;
 }
+noscript {
+  font-family: sans-serif;
+  font-size: 1.3em;
+  color: #8b0000;
+}
 ul {
   border: 2px solid #242424;
   border-radius: 0.6em;
@@ -71,7 +76,7 @@ header#auricle nav:hover {
 }
 section.jiandu {
  /* width: 29.6em; */
-  width: 43em;
+  width: 42.5em;
   margin: 1% auto;
   overflow: hidden;
 }
@@ -115,8 +120,8 @@ p.attr {
     font-size: 1em;
   }
   section.jiandu {
-    width: 23.3em;
-   /* width: 33em; */
+   /* width: 23.3em; */
+    width: 33em;
   }
   section.jiandu pre {
     border: 2px solid #242424;
