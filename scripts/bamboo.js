@@ -186,7 +186,7 @@ if (document.title === "") {
 
 HuangShan.clade = document.title.split("_");
 
-HuangShan.totem = "WhiteTiger";
+HuangShan.totem = "AzureDragon";
 
 HuangShan.phase = ["prime", "retro"];
 

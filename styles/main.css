@@ -70,9 +70,10 @@ header#auricle nav:hover {
   cursor: pointer;
 }
 section.jiandu {
-  width: 29.6em;
- /* width: 43em; */
+ /* width: 29.6em; */
+  width: 43em;
   margin: 1% auto;
+  overflow: hidden;
 }
 section.jiandu pre {
   margin: 0;
